@@ -2,20 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="190875" started-at="2020-04-16T12:20:09Z" finished-at="2020-04-16T12:23:19Z">
+  <suite name="Default suite" duration-ms="38581" started-at="2020-06-30T11:02:27Z" finished-at="2020-06-30T11:03:05Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="190875" started-at="2020-04-16T12:20:09Z" finished-at="2020-04-16T12:23:19Z">
-      <class name="Academy.firstTest">
-        <test-method status="PASS" signature="startup()[pri:0, instance:Academy.firstTest@6a78afa0]" name="startup" is-config="true" duration-ms="23" started-at="2020-04-16T12:20:09Z" finished-at="2020-04-16T12:20:09Z">
+    <test name="Default test" duration-ms="38581" started-at="2020-06-30T11:02:27Z" finished-at="2020-06-30T11:03:05Z">
+      <class name="Academy.test_01">
+        <test-method status="PASS" signature="startup()[pri:0, instance:Academy.test_01@2f4948e4]" name="startup" is-config="true" duration-ms="7339" started-at="2020-06-30T11:02:27Z" finished-at="2020-06-30T11:02:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startup -->
-        <test-method status="PASS" signature="ExpenseReport()[pri:0, instance:Academy.firstTest@6a78afa0]" name="ExpenseReport" duration-ms="190828" started-at="2020-04-16T12:20:09Z" finished-at="2020-04-16T12:23:19Z">
+        <test-method status="PASS" signature="test()[pri:0, instance:Academy.test_01@2f4948e4]" name="test" duration-ms="29938" started-at="2020-06-30T11:02:34Z" finished-at="2020-06-30T11:03:04Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ExpenseReport -->
-      </class> <!-- Academy.firstTest -->
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="After_test()[pri:0, instance:Academy.test_01@2f4948e4]" name="After_test" is-config="true" duration-ms="1264" started-at="2020-06-30T11:03:04Z" finished-at="2020-06-30T11:03:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- After_test -->
+      </class> <!-- Academy.test_01 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

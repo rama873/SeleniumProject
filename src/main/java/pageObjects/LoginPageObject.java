@@ -4,9 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPageObject {
+import resources.base;
+
+public class LoginPageObject extends base {
 	
-	public WebDriver driver;
+	
+	
+	public static LoginPageObject lp = new LoginPageObject(driver);
 	
 	By uname = By.xpath("//input[@id='userid']");
 	By password = By.xpath("//input[@id='password']");
@@ -17,21 +21,13 @@ public class LoginPageObject {
 		this.driver=driver;
 	}
 	
-
-
-	public WebElement username() {
-		return driver.findElement(uname);
+	public void login() {
+		driver.findElement(uname).sendKeys("jsmith");
+		driver.findElement(password).sendKeys("p");
+		driver.findElement(submit).click();
+		
+		
 	}
 	
-	public WebElement password() {
-		return driver.findElement(password);
-	}
-	
-	public WebElement submit() {
-		return driver.findElement(submit);
-	}
-	public WebElement title() {
-		return driver.findElement(title);
-	}
 
 }

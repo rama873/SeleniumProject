@@ -4,9 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HomePageObjects {
+import resources.base;
+
+public class HomePageObjects extends base {
 	
-	public WebDriver driver;
+
+	
+	public static HomePageObjects HomePage = new HomePageObjects(driver);
 	
 	By Createbutton = By.xpath("//a[@id='showCreateDialogBtn']");
 	By ERcreatebutton = By.xpath("//a[@id='myDocumentsForm:newERBtn_']");

@@ -24,33 +24,21 @@ public class firstTest extends base {
 	private static Logger log =LogManager.getLogger(base.class.getClass());
 	 @BeforeTest()
 	    public void startup() throws IOException {
-	    	//driver = initialiazeDriver();
+	    	driver = initialiazeDriver();
 	    	log.info("driver is intilized");
-			//driver.get(prop.getProperty("CSFM1C07_TST"))
+			driver.get(prop.getProperty("CSFM1C07_TST"));
 			log.info("navigated to home page");
 			System.out.println("navigated to home page");
 	 }
 	
 	@Test
 	public void ExpenseReport() throws IOException, InterruptedException {
-		driver = initialiazeDriver();
-		for(int i=0;i<10;i++) {
-		driver.get(prop.getProperty("CSFM1C07_TST"));
-		if(i==0) {
-		
-		LoginPageObject LoginPage = new LoginPageObject(driver);
-		
 		driver.manage().window().maximize();
-		LoginPage.username().sendKeys("jsmith");
-		LoginPage.password().sendKeys("p");
-		LoginPage.submit().click();
-		log.info("Home is here");
-		}
-		else {
-		HomePageObjects HomePage = new HomePageObjects(driver);
+		LoginPageObject.lp.login();
+		log.info("Logged in Successfully");
 		String Homepagewindow = driver.getWindowHandle();
-		HomePage.Createbutton().click();
-		HomePage.ERcreatebutton().click();
+		HomePageObjects.HomePage.Createbutton().click();
+		HomePageObjects.HomePage.ERcreatebutton().click();
 		
 
 		Set<String> winhandles = driver.getWindowHandles();
@@ -59,17 +47,17 @@ public class firstTest extends base {
 				driver.switchTo().window(handles);
 				driver.manage().window().maximize();
 				//Thread.sleep(20000);
-				ErCreationPageObjects ExpenseReportCreation = new ErCreationPageObjects(driver);
-				 System.out.println(driver.getTitle());
-				 WebDriverWait wait = new WebDriverWait(driver,1000);
-				 Thread.sleep(3000);
-				 wait.until(ExpectedConditions.elementToBeClickable(ExpenseReportCreation.DocumentTitle()));
-				ExpenseReportCreation.DocumentTitle().sendKeys("Createdby--");
-				ExpenseReportCreation.pdropdown().click();
-				wait.until(ExpectedConditions.elementToBeClickable(ExpenseReportCreation.purpose()));
-				ExpenseReportCreation.purpose().click();
-				ExpenseReportCreation.hsavebtn().click();
-				 System.out.println("report is saved");
+		ErCreationPageObjects ExpenseReportCreation = new ErCreationPageObjects(driver);
+	    System.out.println(driver.getTitle());
+	    WebDriverWait wait = new WebDriverWait(driver,1000);
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.elementToBeClickable(ExpenseReportCreation.DocumentTitle()));
+		ExpenseReportCreation.DocumentTitle().sendKeys("Createdby--");
+	    ExpenseReportCreation.pdropdown().click();
+	    wait.until(ExpectedConditions.elementToBeClickable(ExpenseReportCreation.purpose()));
+	    ExpenseReportCreation.purpose().click();
+		ExpenseReportCreation.hsavebtn().click();
+		System.out.println("report is saved");
 				//wait.until(ExpectedConditions. visibilityOfElementLocated(By.xpath("//a[@id='mainForm:headerSelectLineItemTypeBtn']")));
 				
 				//Thread.sleep(9000);
@@ -106,7 +94,7 @@ public class firstTest extends base {
 			}
 		}
 			
-		}
+		
 		
 		
 
@@ -137,4 +125,4 @@ public class firstTest extends base {
 	}*/
 	
 
-}
+

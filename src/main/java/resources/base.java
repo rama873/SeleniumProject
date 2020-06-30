@@ -27,7 +27,7 @@ public class base {
 		System.out.println(prop.getProperty("browser"));
 		if(prop.getProperty("browser") != null && prop.getProperty("browser").equals("chrome")) {
 			
-			System.setProperty("webdriver.chrome.driver", "C:\\jars selenium\\chrome driver4\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\jars selenium\\chrome driver5\\chromedriver.exe");
                  driver=new ChromeDriver();
 		}
 		else if(prop.getProperty("browser") != null && prop.getProperty("browser").equals("firefox")) {
