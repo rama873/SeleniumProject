@@ -21,9 +21,9 @@ public class LoginPageObject extends base {
 		this.driver=driver;
 	}
 	
-	public void login() {
-		driver.findElement(uname).sendKeys("jsmith");
-		driver.findElement(password).sendKeys("p");
+	public void login(UserDetails ud) {
+		driver.findElement(uname).sendKeys(ud.login);
+		driver.findElement(password).sendKeys(ud.password);
 		driver.findElement(submit).click();
 		
 		

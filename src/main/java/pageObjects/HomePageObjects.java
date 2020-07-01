@@ -17,6 +17,7 @@ public class HomePageObjects extends base {
 	By PRcreatebutton = By.xpath("//a[@id='myDocumentsForm:newPRBtn_']");
 	By TPcreatebutton = By.xpath("//a[@id='myDocumentsForm:newTPBtn_']");
 	By TScreatebutton = By.xpath("//a[@id='myDocumentsForm:newTSBtn_']");
+	By Signout = By.xpath("//span[@id='myDocumentsForm:logoutLink']");
 	
 	public HomePageObjects(WebDriver driver) {
 		this.driver=driver;
@@ -41,5 +42,9 @@ public class HomePageObjects extends base {
 	public WebElement TScreatebutton() {
 		return driver.findElement(TScreatebutton);
 	}
+	public WebElement Signout() {
+		return driver.findElement(Signout);
+	}
+	
 
 }

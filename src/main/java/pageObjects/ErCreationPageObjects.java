@@ -45,7 +45,7 @@ public class ErCreationPageObjects extends base {
 	
 	
 	public void erlinecreate(erline Erline) throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver,9000);
+		WebDriverWait wait = new WebDriverWait(driver,20);
 		driver.findElement(DocumentTitle).sendKeys(Erline.Document_title);
 		driver.findElement(pdropdown).click();
 		driver.findElement(purpose).click();
@@ -58,8 +58,8 @@ public class ErCreationPageObjects extends base {
 		new Actions(driver).sendKeys(Keys.ENTER).perform();
 		driver.findElement(LineItemdate).sendKeys(Erline.DATE);
 		driver.findElement(LineItemAmount).sendKeys(Erline.AMOUNT);
-		Select fruits = new Select(driver.findElement(PaymentType));
-		fruits.selectByVisibleText(Erline.PAYMENT_TYPE);
+		Select ptypes = new Select(driver.findElement(PaymentType));
+		ptypes.selectByVisibleText(Erline.PAYMENT_TYPE);
 		//driver.findElement(PaymentType).sendKeys(Erline.PAYMENT_TYPE);
 		if(Erline.RECEIPT_INCLUDED) {driver.findElement(ReceiptIncluded).click();}
 		driver.findElement(Lineitemsave).click();		
