@@ -13,7 +13,7 @@ import resources.base;
 public class assertstest extends base {
     @BeforeTest
     public void startup() throws IOException {
-    	driver = initialiazeDriver();
+    	//driver = initialiazeDriver();
 		driver.get(prop.getProperty("CSFM1C07_TST"));
 		
     }
